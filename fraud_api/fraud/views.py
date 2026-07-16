@@ -212,7 +212,7 @@ LIMIT 100
     "payment_method",
     "device",
     "risk_level"
-])
+
 
     for row in rows:
         writer.writerow(row)
