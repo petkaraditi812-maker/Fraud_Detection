@@ -9,7 +9,7 @@ def store_results():
 
     df = load_and_engineer_features()
 
-    df[["risk_score", "fraud_flag", "risk_level", "fraud_reason"]] = df.apply(
+    df[["risk_score", "fraud_flag", "risk_level", "action","fraud_reason"]] = df.apply(
         lambda row: calculate_risk(row),
         axis=1,
         result_type="expand"
@@ -30,9 +30,9 @@ def store_results():
 
     for _, row in df.iterrows():
 
-        if row["fraud_flag"] == "Yes":
+        
 
-            cursor.execute(
+        cursor.execute(
     """
     INSERT INTO fraud_transactions
     (
@@ -50,10 +50,12 @@ def store_results():
         merchant_category,
         payment_method,
         device,
-        risk_level
+        risk_level,
+        fraud_probability,
+        prediction_confidence
     )
     VALUES
-    (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+    (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
     """,
     (
         row["transaction_id"],
@@ -63,14 +65,16 @@ def store_results():
         row["fraud_flag"],
         row["fraud_reason"],
         row["timestamp"],
-        int(row["ml_prediction"]),
+        row["ml_prediction"],
         row["city"],
         row["state"],
         row["merchant_name"],
         row["merchant_category"],
         row["payment_method"],
         row["device"],
-        row["risk_level"]
+        row["risk_level"],
+        float(row["fraud_probability"]),
+        row["prediction_confidence"]
     )
 )
 

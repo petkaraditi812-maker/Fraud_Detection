@@ -7,11 +7,24 @@ def load_and_engineer_features():
     db = client["fraud_db"]
     collection = db["transactions"]
 
+
     data = list(collection.find())
     df = pd.DataFrame(data)
 
+    required_columns = [
+        "otp_verified",
+        "trusted_device",
+        "trusted_beneficiary"
+    ]
+
+    for col in required_columns:
+        if col not in df.columns:
+            raise ValueError(f"Missing column: {col}")
+
     if df.empty:
         raise ValueError("No transactions found in MongoDB")
+
+    
 
     df["timestamp"] = pd.to_datetime(df["timestamp"])
 

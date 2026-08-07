@@ -25,14 +25,40 @@ def calculate_risk(row):
     if row["device_changed"] == 1:
         risk_score += 10
         reasons.append("Device changed")
+    # -----------------------------
+    # Trust Factors (Reduce Risk)
+    # -----------------------------
+
+    if row["otp_verified"] == 1:
+        risk_score -= 15
+        reasons.append("OTP Verified")
+
+    if row["trusted_device"] == 1:
+        risk_score -= 10
+        reasons.append("Trusted Device")
+
+    if row["trusted_beneficiary"] == 1:
+        risk_score -= 15
+        reasons.append("Trusted Beneficiary")
+
+    risk_score = max(risk_score, 0)
+
 
     fraud_flag = "Yes" if risk_score >= 50 else "No"
 
-    if risk_score >= 70:
-        risk_level = "High"
-    elif risk_score >= 40:
-        risk_level = "Medium"
-    else:
+    if risk_score < 40:
         risk_level = "Low"
+        fraud_flag = "No"
+        action = "Approve"
 
-    return risk_score, fraud_flag, risk_level, ", ".join(reasons)
+    elif risk_score < 70:
+        risk_level = "Medium"
+        fraud_flag = "No"
+        action = "Additional Verification"
+
+    else:
+        risk_level = "High"
+        fraud_flag = "Yes"
+        action = "Block Transaction"
+
+    return risk_score, fraud_flag, risk_level, action, ", ".join(reasons)
