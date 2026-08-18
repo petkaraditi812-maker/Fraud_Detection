@@ -1,5 +1,8 @@
-pymongo
+Django
+djangorestframework
 pandas
-psycopg2
+numpy
 scikit-learn
-flask
+imbalanced-learn
+pymongo
+psycopg2-binary
