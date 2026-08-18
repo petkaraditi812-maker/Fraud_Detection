@@ -83,7 +83,7 @@ Model Performance
 Confusion Matrix
 
 
-
+![Confusion Matrix](screenshots/confusion-matrix.png)
 
 API Response
 
