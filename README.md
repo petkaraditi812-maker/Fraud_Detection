@@ -77,7 +77,7 @@ Results
 
 Model Performance
 
-
+![Accuracy](screenshots/Accuracy.png)
 
 
 Confusion Matrix
