@@ -10,12 +10,19 @@ It provides real-time fraud prediction through a Django API and stores transacti
 
 Key Features:
 Rule-based fraud risk scoring
+
 Machine Learning fraud prediction
+
 SMOTE for handling imbalanced data
+
 Real-time fraud detection API
+
 Fraud probability and prediction confidence
+
 Risk level and fraud reasons
+
 MongoDB and PostgreSQL integration
+
 Power BI fraud analysis dashboard
 
 
@@ -33,3 +40,42 @@ Location change
 Device change
 
 Trusted signals such as OTP verification and trusted devices can reduce the risk score.
+
+API
+
+The Django API provides real-time fraud detection through:
+
+/api/realtime-check/
+
+The API returns:
+
+Fraud prediction
+Fraud probability
+Confidence
+Risk level
+Risk score
+Fraud reasons
+
+Database
+
+MongoDB → Raw transaction data
+
+PostgreSQL → Processed fraud transaction data
+
+Results
+Model Performance
+
+
+
+
+Confusion Matrix
+
+
+
+
+API Response
+
+
+
+
+Power BI Dashboard
