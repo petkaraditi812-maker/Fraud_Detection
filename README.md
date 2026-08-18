@@ -9,6 +9,7 @@ The system analyses transaction behaviour such as amount, transaction timing, lo
 It provides real-time fraud prediction through a Django API and stores transaction data using MongoDB and PostgreSQL.
 
 Key Features:
+
 Rule-based fraud risk scoring
 
 Machine Learning fraud prediction
@@ -33,10 +34,15 @@ The system calculates a risk score based on suspicious transaction behaviour.
 Examples:
 
 High transaction amount
+
 Large amount deviation
+
 Night-time transaction
+
 Multiple transactions within 10 minutes
+
 Location change
+
 Device change
 
 Trusted signals such as OTP verification and trusted devices can reduce the risk score.
@@ -50,10 +56,15 @@ The Django API provides real-time fraud detection through:
 The API returns:
 
 Fraud prediction
+
 Fraud probability
+
 Confidence
+
 Risk level
+
 Risk score
+
 Fraud reasons
 
 Database
@@ -63,6 +74,7 @@ MongoDB → Raw transaction data
 PostgreSQL → Processed fraud transaction data
 
 Results
+
 Model Performance
 
 
