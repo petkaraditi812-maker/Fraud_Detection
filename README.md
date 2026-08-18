@@ -91,3 +91,4 @@ API Response
 
 
 Power BI Dashboard
+![Power BI Dashboard](screenshots/Dashboard.png)
