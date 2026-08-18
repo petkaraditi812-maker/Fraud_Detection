@@ -73,22 +73,3 @@ MongoDB → Raw transaction data
 
 PostgreSQL → Processed fraud transaction data
 
-Results
-
-Model Performance
-
-![Accuracy](screenshots/Accuracy.png)
-
-
-Confusion Matrix
-
-
-![Confusion Matrix](screenshots/confusion-matrix.png)
-
-API Response
-
-
-
-
-Power BI Dashboard
-![Power BI Dashboard](screenshots/Dashboard.png)
