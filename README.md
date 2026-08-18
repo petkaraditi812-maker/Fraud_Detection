@@ -1,75 +1,84 @@
-Fraud Detection System
+#  Fraud Detection System
 
-An end-to-end Machine Learning based Fraud Detection System that identifies suspicious financial transactions using Risk Scoring and Logistic Regression.
+An end-to-end **Machine Learning based Fraud Detection System** that identifies suspicious financial transactions using **Risk Scoring and Logistic Regression**.
 
-Project Overview
+##  Project Overview
 
-The system analyses transaction behaviour such as amount, transaction timing, location and device changes to detect potentially fraudulent transactions.
+The system analyses transaction behaviour such as transaction amount, timing, location and device changes to detect potentially fraudulent transactions.
 
-It provides real-time fraud prediction through a Django API and stores transaction data using MongoDB and PostgreSQL.
+It provides **real-time fraud prediction through a Django API** and stores transaction data using **MongoDB and PostgreSQL**.
 
-Key Features:
+##  Technologies Used
 
-Rule-based fraud risk scoring
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* Logistic Regression
+* SMOTE
+* Django
+* MongoDB
+* PostgreSQL
+* Power BI
+* Postman
 
-Machine Learning fraud prediction
+##  Key Features
 
-SMOTE for handling imbalanced data
+* Rule-based fraud risk scoring
+* Machine Learning fraud prediction
+* SMOTE for handling imbalanced data
+* Real-time fraud detection API
+* Fraud probability and prediction confidence
+* Risk level and fraud reasons
+* MongoDB and PostgreSQL integration
+* Power BI fraud analysis dashboard
 
-Real-time fraud detection API
-
-Fraud probability and prediction confidence
-
-Risk level and fraud reasons
-
-MongoDB and PostgreSQL integration
-
-Power BI fraud analysis dashboard
-
-
-Risk Scoring
+##  Risk Scoring
 
 The system calculates a risk score based on suspicious transaction behaviour.
 
-Examples:
+### Examples:
 
-High transaction amount
+* High transaction amount
+* Large amount deviation
+* Night-time transaction
+* Multiple transactions within 10 minutes
+* Location change
+* Device change
 
-Large amount deviation
+Trusted signals such as **OTP verification** and **trusted devices** can reduce the risk score.
 
-Night-time transaction
+##  Machine Learning
 
-Multiple transactions within 10 minutes
+The project uses **Logistic Regression** to classify transactions as legitimate or fraudulent.
 
-Location change
+**SMOTE (Synthetic Minority Oversampling Technique)** is used to handle class imbalance in the training data.
 
-Device change
-
-Trusted signals such as OTP verification and trusted devices can reduce the risk score.
-
-API
+##  API
 
 The Django API provides real-time fraud detection through:
 
+```text
 /api/realtime-check/
+```
 
 The API returns:
 
-Fraud prediction
+* Fraud prediction
+* Fraud probability
+* Confidence
+* Risk level
+* Risk score
+* Fraud reasons
 
-Fraud probability
+##  Database
 
-Confidence
+**MongoDB** → Raw transaction data
 
-Risk level
+**PostgreSQL** → Processed fraud transaction data
 
-Risk score
+##  Dashboard
 
-Fraud reasons
+The processed transaction data is visualized using Power BI to analyse fraud patterns and risk levels.
 
-Database
-
-MongoDB → Raw transaction data
-
-PostgreSQL → Processed fraud transaction data
-
+The processed transaction data is visualized using **Power BI** to analyse fraud patterns and risk levels.
