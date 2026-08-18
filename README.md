@@ -79,6 +79,5 @@ The API returns:
 
 ##  Dashboard
 
-The processed transaction data is visualized using Power BI to analyse fraud patterns and risk levels.
 
 The processed transaction data is visualized using **Power BI** to analyse fraud patterns and risk levels.
